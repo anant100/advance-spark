@@ -48,7 +48,7 @@ object DegreeOfSeparation {
   
   /** Create "iteration 0" of our RDD of BFSNodes */
   def createStartingRdd(sc: SparkContext): RDD[BFSnode] = {
-    val inputFile = sc.textFile("../Udemy Course Material/SparkScala3/marvel-graph.txt")
+    val inputFile = sc.textFile("../SparkScala3/marvel-graph.txt")
     return inputFile.map(convertToBfs)
   }
   
