@@ -31,11 +31,11 @@ object PopularSuperhero extends App {
   val sc = new SparkContext("local[*]", "PopularSuperhero")
   
   // Build RDD of heroId -> Name
-  val names = sc.textFile("../Udemy Course Material/SparkScala3/Marvel-names.txt")
+  val names = sc.textFile("../SparkScala3/Marvel-names.txt")
   val namesRdd = names.flatMap(SuperheroNames)
   
   // Build RDD of Superhero Graph (HeroId, number of connections)
-  val graph = sc.textFile("../Udemy Course Material/SparkScala3/Marvel-graph.txt")
+  val graph = sc.textFile("../SparkScala3/Marvel-graph.txt")
   val graphRdd = graph.map(SuperheroGraph)
   
   // Sumup duplicate values
